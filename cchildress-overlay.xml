@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+ 
+<repositories version="1.0">
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>sarnold</name>
+		<description>Portage overlay from cchildress.</description>
+		<homepage>https://github.com/cchildress/gentoo-overlay</homepage>
+		<owner>
+			<email>gentoo-overlay@cchildress.org</email>
+		</owner>
+		<source type="git">git://https://github.com/cchildress/gentoo-overlay.git</source>
+	</repo>
