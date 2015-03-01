@@ -12,7 +12,7 @@ SRC_URI="http://downloads.sourceforge.net/project/scst/scst/scst-3.0.1.tar.bz2?r
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 !x86"
+KEYWORDS="~amd64 ~x86"
 RESTRICT="mirror"
 
 DEPEND="sys-kernel/scst-sources"

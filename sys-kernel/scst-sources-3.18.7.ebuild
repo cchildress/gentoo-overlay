@@ -18,7 +18,7 @@ HOMEPAGE="https://github.com/cchildress/gentoo-scst http://scst.sourceforge.net/
 SRC_URI="https://github.com/cchildress/gentoo-scst"
 LICENSE="GPL-2"
 
-KEYWORDS="amd64 ~x86"
+KEYWORDS="~amd64 ~x86"
 RESTRICT="mirror"
 IUSE="deblob iscsi experimental"
 
