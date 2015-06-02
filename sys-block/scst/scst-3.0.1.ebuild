@@ -6,9 +6,11 @@ EAPI=5
 
 inherit eutils linux-mod
 
+SCST_VERSION="3.0.1"
+
 DESCRIPTION="Userspace files needed to act as a SCSI target"
-HOMEPAGE="http://scst.sourceforge.net/"
-SRC_URI="http://downloads.sourceforge.net/project/scst/scst/scst-3.0.1.tar.bz2?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fscst%2Ffiles%2Fscst%2F&ts=1425172125&use_mirror=hivelocity"
+HOMEPAGE="https://github.com/cchildress/scst http://scst.sourceforge.net/"
+SRC_URI="https://raw.githubusercontent.com/cchildress/scst/master/scst-${SCST_VERSION}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -19,15 +21,12 @@ DEPEND="sys-kernel/scst-sources"
 
 MODULE_NAMES="scst"
 CONFIG_CHECK="BLK_DEV_SD CFQ CRYPTO_CRC32C IOSCHED_CFQ INET PREEMPT_NONE TCP_ZERO_COPY_TRANSFER_COMPLETION_NOTIFICATION"
-ERROR_CFG="The following options must be set in the kernel:
-	BLK_DEV_SD CFQ CRYPTO_CRC32C IOSCHED_CFQ INET PREEMPT_NONE TCP_ZERO_COPY_TRANSFER_COMPLETION_NOTIFICATION"
-
-src_prepare() {
-}
+ERROR_CFG="The following options must be set in the kernel: BLK_DEV_SD CFQ CRYPTO_CRC32C IOSCHED_CFQ INET PREEMPT_NONE TCP_ZERO_COPY_TRANSFER_COMPLETION_NOTIFICATION"
 
 src_compile() {
-	
+	emake
 }
 
 src_install() {
+	dodoc README
 }
