@@ -13,7 +13,7 @@ inherit kernel-2
 detect_version
 detect_arch
 
-SCST_URI="https://raw.githubusercontent.com/cchildress/scst/master/patches-${KV_MAJOR}.${KV_MINOR}.tar.bz2"
+SCST_URI="https://raw.githubusercontent.com/cchildress/scst/master/scst-patches-${KV_MAJOR}.${KV_MINOR}.tar.bz2"
 
 DESCRIPTION="Full sources including the Gentoo patchset for the ${KV_MAJOR}.${KV_MINOR} kernel tree and SCST support"
 HOMEPAGE="https://github.com/cchildress/gentoo-overlay http://scst.sourceforge.net/"
@@ -26,9 +26,9 @@ IUSE="deblob iscsi experimental"
 
 src_unpack() {
 	if use iscsi; then
-		UNIPATCH_LIST=${WORKDIR}"/scst-sources-3.18.7-iscsi-scst.patch"
+		UNIPATCH_LIST=${WORKDIR}"/put_page_callback-3.18.patch"
 	fi
-	UNIPATCH_LIST+=" "${WORKDIR}"/scst-sources-3.18.7-scst.patch"
+	UNIPATCH_LIST+=" "${WORKDIR}"/cst_exec_req_fifo-3.18.patch"
 
 	kernel-2_src_unpack
 }
