@@ -8,12 +8,14 @@ ETYPE="sources"
 K_WANT_GENPATCHES="base extras experimental"
 K_GENPATCHES_VER="14"
 K_DEBLOB_AVAILABLE="0"
-UNIPATCH_STRICTORDER=1
+#UNIPATCH_STRICTORDER=1
 inherit kernel-2
 detect_version
 detect_arch
 
-SCST_URI="https://raw.githubusercontent.com/cchildress/scst/master/scst-patches-${KV_MAJOR}.${KV_MINOR}.tar.bz2"
+SCST_VERSION="3.0.1"
+SCST_FILE="scst-patches-${KV_MAJOR}.${KV_MINOR}.tar.bz2"
+SCST_URI="https://raw.githubusercontent.com/cchildress/scst/master/${SCST_FILE}"
 
 DESCRIPTION="Full sources including the Gentoo patchset for the ${KV_MAJOR}.${KV_MINOR} kernel tree and SCST support"
 HOMEPAGE="https://github.com/cchildress/gentoo-overlay http://scst.sourceforge.net/"
@@ -26,9 +28,13 @@ IUSE="deblob iscsi experimental"
 
 src_unpack() {
 	if use iscsi; then
-		UNIPATCH_LIST=${WORKDIR}"/put_page_callback-3.18.patch"
+		UNIPATCH_LIST=${WORKDIR}"/patches-${KV_MAJOR}.${KV_MINOR}/put_page_callback-3.18.patch"
 	fi
-	UNIPATCH_LIST+=" "${WORKDIR}"/cst_exec_req_fifo-3.18.patch"
+	UNIPATCH_LIST+=" "${WORKDIR}"/patches-${KV_MAJOR}.${KV_MINOR}/scst_exec_req_fifo-3.18.patch"
+
+	unpack ${SCST_FILE}
+
+	einfo "Using SCST version ${SCST_VERSION}"
 
 	kernel-2_src_unpack
 }
