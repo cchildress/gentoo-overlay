@@ -13,9 +13,11 @@ inherit kernel-2
 detect_version
 detect_arch
 
+SCST_URI="https://raw.githubusercontent.com/cchildress/scst/master/patches-${KV_MAJOR}.${KV_MINOR}.tar.bz2"
+
 DESCRIPTION="Full sources including the Gentoo patchset for the ${KV_MAJOR}.${KV_MINOR} kernel tree and SCST support"
 HOMEPAGE="https://github.com/cchildress/gentoo-overlay http://scst.sourceforge.net/"
-SRC_URI="${KERNEL_URI} ${GENPATCHES_URI} ${ARCH_URI}"
+SRC_URI="${KERNEL_URI} ${GENPATCHES_URI} ${ARCH_URI} ${SCST_URI}"
 LICENSE="GPL-2"
 
 KEYWORDS="~amd64 ~x86"
