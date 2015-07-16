@@ -19,12 +19,13 @@ RESTRICT="mirror"
 
 DEPEND="sys-kernel/scst-sources"
 
-MODULE_NAMES="scst"
+MODULE_NAMES="scst scst_vdisk"
 CONFIG_CHECK="BLK_DEV_SD CRYPTO_CRC32C DEFAULT_CFQ IOSCHED_CFQ INET PREEMPT_NONE TCP_ZERO_COPY_TRANSFER_COMPLETION_NOTIFICATION"
 ERROR_CFG="The following options must be set in the kernel: BLK_DEV_SD CRYPTO_CRC32C DEFAULT_CFQ IOSCHED_CFQ INET PREEMPT_NONE TCP_ZERO_COPY_TRANSFER_COMPLETION_NOTIFICATION"
 
 src_compile() {
-	emake
+        ARCH="x86_64"
+        emake all KVER=${KV_FULL}|| die
 }
 
 src_install() {
