@@ -1,0 +1,6 @@
+[cchildress]
+location = /usr/local/portage/cchildress
+sync-type = git
+sync-uri = git://git://github.com/cchildress/gentoo-overlay.git
+masters = gentoo
+auto-sync = yes
