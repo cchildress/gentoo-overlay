@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -21,5 +21,5 @@ DEPEND=">=dev-lang/go-1.7:="
 src_install() {
 	golang-single_src_install
 
-  dodoc "${S}"/${EGO_PN%/*}/{CHANGELOG.md,.github/CONTRIBUTING.md,README.md}
+	dodoc "${S}"/${EGO_PN%/*}/{CHANGELOG.md,.github/CONTRIBUTING.md,README.md}
 }
