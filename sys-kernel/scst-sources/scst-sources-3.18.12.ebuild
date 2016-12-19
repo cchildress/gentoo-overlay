@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -17,7 +17,7 @@ SCST_VERSION="3.0.1"
 SCST_FILE="scst-patches-${KV_MAJOR}.${KV_MINOR}.tar.bz2"
 SCST_URI="https://raw.githubusercontent.com/cchildress/scst/master/${SCST_FILE}"
 
-DESCRIPTION="Full sources including the Gentoo patchset for the ${KV_MAJOR}.${KV_MINOR} kernel tree and SCST support"
+DESCRIPTION="Full sources including the Gentoo patchset for the ${KV_MAJOR}.${KV_MINOR} kernel with SCST support"
 HOMEPAGE="https://github.com/cchildress/gentoo-overlay http://scst.sourceforge.net/"
 SRC_URI="${KERNEL_URI} ${GENPATCHES_URI} ${ARCH_URI} ${SCST_URI}"
 LICENSE="GPL-2"

@@ -1,4 +1,4 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -24,8 +24,8 @@ CONFIG_CHECK="BLK_DEV_SD CRYPTO_CRC32C DEFAULT_CFQ IOSCHED_CFQ INET PREEMPT_NONE
 ERROR_CFG="The following options must be set in the kernel: BLK_DEV_SD CRYPTO_CRC32C DEFAULT_CFQ IOSCHED_CFQ INET PREEMPT_NONE TCP_ZERO_COPY_TRANSFER_COMPLETION_NOTIFICATION"
 
 src_compile() {
-        ARCH="x86_64"
-        emake all KVER=${KV_FULL}|| die
+  ARCH="x86_64"
+  emake all KVER=${KV_FULL}|| die
 }
 
 src_install() {
