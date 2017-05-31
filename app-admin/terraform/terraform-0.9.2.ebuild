@@ -16,7 +16,7 @@ LICENSE="MPL-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 
-DEPEND=">=dev-lang/go-1.7:="
+DEPEND=">=dev-lang/go-1.8.3:="
 
 src_install() {
 	golang-single_src_install
