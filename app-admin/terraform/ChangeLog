@@ -1,3 +1,8 @@
+*terraform-0.10.3 (31 Aug 2017)
+
+  31 Aug 2017;  <cameron@gentoo.org> +terraform-0.10.3.ebuild:
+  app-admin/terraform: Add version 0.10.3
+
 *terraform-0.10.0 (17 Aug 2017)
 *terraform-0.10.1 (17 Aug 2017)
 *terraform-0.10.2 (17 Aug 2017)
